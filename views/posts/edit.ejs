@@ -1,0 +1,17 @@
+<%- include('../partials/header') -%>
+	<form action='/posts/<%= post._id %>?_method=PUT' method="POST">
+		<div>
+			<label for="blog[title]">Title</label>
+			<input type="text" name="blog[title]" value="<%= post.title %>">
+		</div>
+		<div>
+			<label for="blog[image]">Image URL</label>
+			<input type="text" name="blog[image]" value="<%= post.image %>">
+		</div>
+		<div>
+			<label for="blog[content]">Content</label>
+			<input type="text" name="blog[content]" value="<%= post.content %>">
+		</div>
+		<button>Update</button>
+	</form>
+<%- include('../partials/footer') -%>

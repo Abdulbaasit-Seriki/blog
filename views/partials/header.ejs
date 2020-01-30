@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Fawaz Blog App</title>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+	</head>
+	<body>
+		<nav>
+			<div class="logo">
+				<a class="logo-name" href="/">Fawaz Blog</a>
+			</div>
+			<div>
+				<ul>
+					<% if(currentUser === undefined) { %>
+						<li><a href="/">Blog</a></li>
+						<li><a href="/signup">Sign Up</a></li>
+						<li><a href="/signin">Sign In</a></li>
+					<% } else { %>
+						<li><a href="#"><%= currentUser.username %></a></li>
+						<li><a href="/logout">Logout</a></li>
+						<li><a href="/posts/new">New Post</a></li>
+						<% } %>
+				</ul>
+			</div>
+		</nav>

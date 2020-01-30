@@ -1,0 +1,15 @@
+<%- include('../partials/header') -%>
+	<h1><%= post.title %></h1>
+	<img src="<%= post.image %>">
+	<p><%= post.content %></p>
+	<p> <em> By <%= post.author.username %> </em> </p>
+	<a href="/posts/<%= post._id %>/edit">Edit</a>
+	<form action='/posts/<%= post._id %>?_method=DELETE' method="POST">
+		<button>Delete</button>
+	</form>
+	<% post.comments.forEach((comment) => { %>
+		<p><%= comment.content %></p>
+		<p><strong><%= comment.author.username %></strong> on <%= comment.dateCreated.toDateString() %></p>
+	<% }) %>
+	<a href="/posts/<%= post._id %>/comments/new">Add a comment<a>
+<%- include('../partials/footer') -%>

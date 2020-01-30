@@ -1,0 +1,9 @@
+<%- include('../partials/header') -%>
+<section class="form-section">
+			<h1>Add a comment to <%= post.name %></h1>
+			<form action="/posts/<%= post._id %>/comments" method="POST">
+				<textarea type="text" name="comment[content]" placeholder="Comments here"></textarea>
+				<button class="form-btn">Add Comment</button>
+			</form>
+		</section>
+<%- include('../partials/footer') -%>
